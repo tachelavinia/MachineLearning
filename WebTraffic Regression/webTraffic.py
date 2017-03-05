@@ -84,3 +84,29 @@ plt.autoscale(tight=True)
 plt.grid()
 plt.show()
 print("Error inflection=%f" % (fa_error + fb_error))
+
+#separate data set in training and testing data
+frac = 0.3
+split_idx = int(frac * len(x))
+shuffled = sp.random.permutation(list(range(len(x))))
+test = sorted(shuffled[:split_idx])
+train = sorted(shuffled[split_idx:])
+fbt1 = sp.poly1d(sp.polyfit(x[train], y[train], 1))
+fbt2 = sp.poly1d(sp.polyfit(x[train], y[train], 2))
+print("fbt2(x)= \n%s"%fbt2)
+print("fbt2(x)-100,000= \n%s"%(fbt2-100000))
+
+
+plt.scatter(x,y,s = 2)
+plt.title("Web traffic over the last month")
+plt.xlabel("Time")
+plt.ylabel("Hits/hour")
+plt.xticks([w*7*24 for w in range(10)], ['week %i'%w for w in range(10)])
+
+fbt3 = sp.poly1d(sp.polyfit(x[train], y[train], 3))
+plt.plot(fx, fbt3(fx), linewidth=2,c="y")
+plt.autoscale(tight=True)
+plt.grid()
+plt.show()
+
+
