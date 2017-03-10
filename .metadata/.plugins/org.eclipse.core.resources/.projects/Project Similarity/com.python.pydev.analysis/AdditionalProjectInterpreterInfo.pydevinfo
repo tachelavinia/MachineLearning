@@ -1,0 +1,25 @@
+-- VERSION_4
+-- START DISKCACHE_2
+D:\Facultate\MachineLearning\.metadata\.plugins\org.eclipse.core.resources\.projects\Project Similarity\com.python.pydev.analysis\v2_indexcache
+ProjectSimilarity|1489184518937429000|D:\Facultate\MachineLearning\Project Similarity\ProjectSimilarity.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=ProjectSimilarity
+-- END DICTIONARY
+-- START TREE 1
+10
+X|1|X!11@
+bes|3|best_dist!11@best_i!11@best_doc!11@
+con|1|content!11@
+d|1|d!11@
+dir|1|DIR!11@
+dis|2|dist_norm!10@dist_raw!10@
+new|2|new_post!11@new_post_vec!11@
+pos|3|post!11@post_vec!11@posts!11@
+vec|1|vectorizer!11@
+x_t|1|X_train!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

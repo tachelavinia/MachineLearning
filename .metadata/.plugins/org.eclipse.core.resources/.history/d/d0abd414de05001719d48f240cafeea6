@@ -1,0 +1,11 @@
+from sklearn.feature_extraction.text import CountVectorizer
+import os
+vectorizer = CountVectorizer(min_df=1)
+
+# print(vectorizer)
+content = ["How to format my hard disk","Hard disk format problems"]
+X = vectorizer.fit_transform(content)
+vectorizer.get_feature_names()
+
+DIR = "./data/toy"
+posts = [open(os.path.join(DIR, f)).read() for f in os.listdir(DIR)]
