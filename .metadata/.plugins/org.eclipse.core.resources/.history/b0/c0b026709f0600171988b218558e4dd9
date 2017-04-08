@@ -1,0 +1,3 @@
+import sklearn.datasets
+MLCOMP_DIR = r"D:\Facultate\MachineLearning\Text Similarity\data\379"
+data = sklearn.datasets.load_mlcomp("20news-18828", mlcomp_root=MLCOMP_DIR)

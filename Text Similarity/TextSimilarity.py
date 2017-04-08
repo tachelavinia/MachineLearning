@@ -1,11 +1,27 @@
 from sklearn.feature_extraction.text import CountVectorizer
 import os
 import numpy as np
-import scipy as sp
 import scipy.linalg as sp_linalg
+from sklearn.feature_extraction.text import TfidfVectorizer
+import nltk.stem
 
-vectorizer = CountVectorizer(min_df= 1, stop_words='english')
+#stem
+english_stemmer = nltk.stem.SnowballStemmer('english')
+# class StemmedCountVectorizer(CountVectorizer):
+#     def build_analyzer(self):
+#         analyzer = super(StemmedCountVectorizer, self).build_analyzer()
+#         return lambda doc: (english_stemmer.stem(w) for w in analyzer(doc))
+#         
+# 
+# vectorizer = StemmedCountVectorizer(min_df= 1, stop_words='english')
 
+#TF-IDF
+class StemmedTfidfVectorizer(TfidfVectorizer):
+    def build_analyzer(self):
+        analyzer = super(TfidfVectorizer,self).build_analyzer()
+        return lambda doc: (english_stemmer.stem(w) for w in analyzer(doc))
+    
+vectorizer = StemmedTfidfVectorizer(min_df=1,stop_words='english')    
 # print(vectorizer)
 content = ["How to format my hard disk","Hard disk format problems"]
 X = vectorizer.fit_transform(content)

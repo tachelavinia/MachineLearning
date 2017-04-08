@@ -1,0 +1,2 @@
+import sklearn.datasets
+MLCOMP_DIR = r"D:\data"

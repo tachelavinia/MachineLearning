@@ -1,0 +1,15 @@
+import sklearn.datasets
+MLCOMP_DIR = r"./data"
+data = sklearn.datasets.load_mlcomp("20news-18828", mlcomp_root=MLCOMP_DIR)
+
+print(data.filenames)
+print(len(data.filenames))
+print(data.target_names)
+
+#train_data = sklearn.datasets.load_mlcomp("20news-18828", "train",mlcomp_root=MLCOMP_DIR)
+#print(len(train_data.filenames))
+#
+#test_data = sklearn.datasets.load_mlcomp("20news-18828","test", mlcomp_root=MLCOMP_DIR)
+#print(len(test_data.filenames))
+
+groups = ['comp.graphics', 'comp.os.ms-windows.misc', 'comp.sys.ibm.pc.hardware', 'comp.sys.ma c.hardware', 'comp.windows.x', 'sci.space']

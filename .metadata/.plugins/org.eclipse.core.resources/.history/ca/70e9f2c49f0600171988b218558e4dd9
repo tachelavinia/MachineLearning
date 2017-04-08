@@ -1,0 +1,6 @@
+import sklearn.datasets
+MLCOMP_DIR = r"./data"
+data = sklearn.datasets.load_mlcomp("20news-18828", mlcomp_root=MLCOMP_DIR)
+print(data.filenames)
+print(len(data.filenames))
+data.target_names

@@ -1,0 +1,2 @@
+import sklearn.datasets
+MLCOMP_DIR = r"D:\Facultate\MachineLearning\Text Similarity\data\379"
